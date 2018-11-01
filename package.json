@@ -1,0 +1,26 @@
+{
+  "name": "@writetome51/array-get-by-indexes",
+  "version": "1.0.0",
+  "description": "Returns multiple items copied from array, identified by their indexes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "array",
+    "manipulation",
+    "return",
+"item",
+"items",
+    "data"
+  ],
+  "author": "Steve Thompson",
+  "license": "MIT",
+  "devDependencies": {
+"@writetome51/arrays-match": "latest"
+},
+  "dependencies": {
+    "@writetome51/array-and-index-validation": "latest",
+ "@writetome51/array-get-item": "latest"
+  }
+}

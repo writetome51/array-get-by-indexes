@@ -28,15 +28,15 @@ else console.log('test 2A FAILED');
 
 
 
-// Test 3: Make sure [-8, 1] removes first 2 items:
+// Test 3: Make sure [-8, 3] gets correct items:
 arr = ['he', 'llo', 'zz', 'gg', 'cc', 'aa', 'hh', 'oo'];
-result = getByIndexes([-8, 1], arr);
-if (arraysMatch(arr, [ 'zz', 'gg', 'cc', 'aa', 'hh', 'oo'])) console.log('test 3 passed');
+result = getByIndexes([-8, 3], arr);
+if (arraysMatch(result, ['he', 'gg'])) console.log('test 3 passed');
 else console.log('test 3 FAILED');
 
 
-// Test 3A: Make sure the correct items were returned:
-if (arraysMatch(result, ['he', 'llo'])) console.log('test 3A passed');
+// Test 3A: Make sure the array wasn't modified:
+if (arraysMatch(arr, ['he', 'llo', 'zz', 'gg', 'cc', 'aa', 'hh', 'oo'])) console.log('test 3A passed');
 else console.log('test 3A FAILED');
 
 
@@ -45,7 +45,7 @@ else console.log('test 3A FAILED');
 arr = ['he', 'llo', 'zz', 'gg', 'cc', 'aa'];
 let errorTriggered = false;
 try {
-	getByIndexes([-7], arr);
+	getByIndexes([0, -7], arr);
 }
 catch (e) {
 	errorTriggered = true;
@@ -71,7 +71,7 @@ else console.log('test 5 FAILED');
 errorTriggered = false;
 arr = ['he', 'llo', 'zz', 'gg', 'cc', 'aa'];
 try {
-	getByIndexes('1', arr);
+	getByIndexes({}, arr);
 }
 catch (e) {
 	errorTriggered = true;
@@ -83,7 +83,7 @@ else console.log('test 6 FAILED');
 // Test 7: Make sure non-array as second arg triggers error:
 errorTriggered = false;
 try {
-	getByIndexes(0, {});
+	getByIndexes([1], {});
 }
 catch (e) {
 	errorTriggered = true;

@@ -1,16 +1,15 @@
 {
   "name": "@writetome51/array-get-by-indexes",
   "version": "1.0.0",
-  "description": "Returns multiple items copied from array, identified by their indexes",
+  "description": "Returns multiple items from array, identified by their indexes. Does not modify array",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
- "repository": {
+  "repository": {
     "type": "git",
     "url": "git+https://github.com/writetome51/array-get-by-indexes.git"
   },
-
   "keywords": [
     "array",
     "manipulation",
@@ -21,7 +20,7 @@
   ],
   "author": "Steve Thompson",
   "license": "MIT",
- "bugs": {
+  "bugs": {
     "url": "https://github.com/writetome51/array-get-by-indexes/issues"
   },
   "homepage": "https://github.com/writetome51/array-get-by-indexes#readme",

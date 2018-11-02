@@ -1,66 +1,92 @@
-import { getItem } from './getItem';
+import { getByIndexes } from './getByIndexes';
+import { arraysMatch } from '@writetome51/arrays-match';
 
 
-let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+let arr = ['he', 'llo', 'bay', 'bayyyy'];
 
-// Test 1: index of -1 should return last item of array, and array should not be modified:
-let result = getItem(-1, arr);
-if (result === 10 && arr.length === 10) console.log('test 1 passed');
-else console.log('test 1 failed.');
-
-
-// Test 2: index of 0 should return first item of array:
-result = getItem(0, arr);
-if (result === 1) console.log('test 2 passed');
-else console.log('test 2 failed.');
+// Test 1: Make sure 0 and 1 gets first 2 items:
+let result = getByIndexes([0, 1], arr);
+if (arraysMatch(result, ['he', 'llo'])) console.log('test 1 passed');
+else console.log('test 1 FAILED');
 
 
-// Test 3: positive index exceeding array's range should trigger error:
-let triggeredError = false;
-try{
-	result = getItem(10, arr);
+// Test 1A: Make sure the array wasn't modified:
+if (arraysMatch(arr, ['he', 'llo', 'bay', 'bayyyy'])) console.log('test 1A passed');
+else console.log('test 1A FAILED');
+
+
+// Test 2: Make sure 4 and 5 gets the last 2 items:
+arr = ['he', 'llo', 'zz', 'gg', 'cc', 'aa'];
+result = getByIndexes([4, 5], arr);
+if (arraysMatch(result, ['cc', 'aa'])) console.log('test 2 passed');
+else console.log('test 2 FAILED');
+
+
+// Test 2A: Make sure the array wasn't modified:
+if (arraysMatch(arr, ['he', 'llo', 'zz', 'gg', 'cc', 'aa'])) console.log('test 2A passed');
+else console.log('test 2A FAILED');
+
+
+
+// Test 3: Make sure [-8, 1] removes first 2 items:
+arr = ['he', 'llo', 'zz', 'gg', 'cc', 'aa', 'hh', 'oo'];
+result = getByIndexes([-8, 1], arr);
+if (arraysMatch(arr, [ 'zz', 'gg', 'cc', 'aa', 'hh', 'oo'])) console.log('test 3 passed');
+else console.log('test 3 FAILED');
+
+
+// Test 3A: Make sure the correct items were returned:
+if (arraysMatch(result, ['he', 'llo'])) console.log('test 3A passed');
+else console.log('test 3A FAILED');
+
+
+
+// Test 4: Make sure -7 triggers error:
+arr = ['he', 'llo', 'zz', 'gg', 'cc', 'aa'];
+let errorTriggered = false;
+try {
+	getByIndexes([-7], arr);
 }
 catch (e) {
-	triggeredError = true;
+	errorTriggered = true;
 }
-if (triggeredError) console.log('test 3 passed');
-else console.log('test 3 failed.');
+if (errorTriggered) console.log('test 4 passed');
+else console.log('test 4 FAILED');
 
 
-// Test 4: negative index exceeding array's range should trigger error:
-triggeredError = false;
-try{
-	result = getItem(-11, arr);
-}
-catch (e) {
-	triggeredError = true;
-}
-if (triggeredError) console.log('test 4 passed');
-else console.log('test 4 failed.');
-
-
-
-// Test 5: if something other than integer is passed as index, it should trigger error:
-triggeredError = false;
-try{
-	result = getItem(1.02, arr);
-	console.log(result);
+// Test 5: Make sure 6 triggers error:
+errorTriggered = false;
+arr = ['he', 'llo', 'zz', 'gg', 'cc', 'aa'];
+try {
+	let x = getByIndexes([6], arr);
 }
 catch (e) {
-	triggeredError = true;
+	errorTriggered = true;
 }
-if (triggeredError) console.log('test 5 passed');
-else console.log('test 5 failed.');
+if (errorTriggered) console.log('test 5 passed');
+else console.log('test 5 FAILED');
 
 
-// Test 6: if something other than array is passed as second arg, it should trigger error:
-triggeredError = false;
-try{
-	result = getItem(0, {1:0});
-	console.log(result);
+// Test 6: Make sure non-array as first arg triggers error:
+errorTriggered = false;
+arr = ['he', 'llo', 'zz', 'gg', 'cc', 'aa'];
+try {
+	getByIndexes('1', arr);
 }
 catch (e) {
-	triggeredError = true;
+	errorTriggered = true;
 }
-if (triggeredError) console.log('test 6 passed');
-else console.log('test 6 failed.');
+if (errorTriggered) console.log('test 6 passed');
+else console.log('test 6 FAILED');
+
+
+// Test 7: Make sure non-array as second arg triggers error:
+errorTriggered = false;
+try {
+	getByIndexes(0, {});
+}
+catch (e) {
+	errorTriggered = true;
+}
+if (errorTriggered) console.log('test 7 passed');
+else console.log('test 7 FAILED');

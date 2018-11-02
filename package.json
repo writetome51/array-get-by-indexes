@@ -6,21 +6,30 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+ "repository": {
+    "type": "git",
+    "url": "git+https://github.com/writetome51/array-get-by-indexes.git"
+  },
+
   "keywords": [
     "array",
     "manipulation",
     "return",
-"item",
-"items",
+    "item",
+    "items",
     "data"
   ],
   "author": "Steve Thompson",
   "license": "MIT",
+ "bugs": {
+    "url": "https://github.com/writetome51/array-get-by-indexes/issues"
+  },
+  "homepage": "https://github.com/writetome51/array-get-by-indexes#readme",
   "devDependencies": {
-"@writetome51/arrays-match": "latest"
-},
+    "@writetome51/arrays-match": "latest"
+  },
   "dependencies": {
-    "@writetome51/array-and-index-validation": "latest",
- "@writetome51/array-get-item": "latest"
+    "@writetome51/array-get-by-index": "latest",
+    "error-if-values-are-not-arrays": "latest"
   }
 }

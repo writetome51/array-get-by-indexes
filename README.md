@@ -13,10 +13,10 @@ Examples:
 
 let arr = [1,2,3,4,5,6,7];
 
-let items = getByIndexes([-1, 3, -3], arr); // item is now [7, 4, 5]
+let items = getByIndexes([-1, 3, -3], arr); // items is now [7, 4, 5]
 
-item = getByIndexes([3, -7], arr); // item is now [4, 1]
+items = getByIndexes([3, -7], arr); // items is now [4, 1]
 
-item = getByIndexes([-8], arr); // triggers error, since array only has 7 items.
+items = getByIndexes([-8], arr); // triggers error, since array only has 7 items.
 
-item = getByIndexes([7], arr); // triggers error, since array only has 7 items.
+items = getByIndexes([7], arr); // triggers error, since array only has 7 items.

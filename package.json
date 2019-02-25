@@ -1,6 +1,6 @@
 {
   "name": "@writetome51/array-get-by-indexes",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Returns multiple items from array, identified by their indexes. Does not modify array",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

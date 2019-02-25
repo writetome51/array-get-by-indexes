@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var getByIndexes_1 = require("./getByIndexes");
+var index_1 = require("./index");
 var arrays_match_1 = require("@writetome51/arrays-match");
 var arr = ['he', 'llo', 'bay', 'bayyyy'];
 // Test 1: Make sure 0 and 1 gets first 2 items:
-var result = getByIndexes_1.getByIndexes([0, 1], arr);
+var result = index_1.getByIndexes([0, 1], arr);
 if (arrays_match_1.arraysMatch(result, ['he', 'llo']))
     console.log('test 1 passed');
 else
@@ -16,7 +16,7 @@ else
     console.log('test 1A FAILED');
 // Test 2: Make sure 4 and 5 gets the last 2 items:
 arr = ['he', 'llo', 'zz', 'gg', 'cc', 'aa'];
-result = getByIndexes_1.getByIndexes([4, 5], arr);
+result = index_1.getByIndexes([4, 5], arr);
 if (arrays_match_1.arraysMatch(result, ['cc', 'aa']))
     console.log('test 2 passed');
 else
@@ -28,7 +28,7 @@ else
     console.log('test 2A FAILED');
 // Test 3: Make sure [-8, 3] gets correct items:
 arr = ['he', 'llo', 'zz', 'gg', 'cc', 'aa', 'hh', 'oo'];
-result = getByIndexes_1.getByIndexes([-8, 3], arr);
+result = index_1.getByIndexes([-8, 3], arr);
 if (arrays_match_1.arraysMatch(result, ['he', 'gg']))
     console.log('test 3 passed');
 else
@@ -42,7 +42,7 @@ else
 arr = ['he', 'llo', 'zz', 'gg', 'cc', 'aa'];
 var errorTriggered = false;
 try {
-    getByIndexes_1.getByIndexes([0, -7], arr);
+    index_1.getByIndexes([0, -7], arr);
 }
 catch (e) {
     errorTriggered = true;
@@ -55,7 +55,7 @@ else
 errorTriggered = false;
 arr = ['he', 'llo', 'zz', 'gg', 'cc', 'aa'];
 try {
-    var x = getByIndexes_1.getByIndexes([6], arr);
+    var x = index_1.getByIndexes([6], arr);
 }
 catch (e) {
     errorTriggered = true;
@@ -68,7 +68,7 @@ else
 errorTriggered = false;
 arr = ['he', 'llo', 'zz', 'gg', 'cc', 'aa'];
 try {
-    getByIndexes_1.getByIndexes({}, arr);
+    index_1.getByIndexes({}, arr);
 }
 catch (e) {
     errorTriggered = true;
@@ -80,7 +80,7 @@ else
 // Test 7: Make sure non-array as second arg triggers error:
 errorTriggered = false;
 try {
-    getByIndexes_1.getByIndexes([1], {});
+    index_1.getByIndexes([1], {});
 }
 catch (e) {
     errorTriggered = true;

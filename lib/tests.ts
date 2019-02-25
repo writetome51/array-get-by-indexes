@@ -1,4 +1,4 @@
-import { getByIndexes } from './getByIndexes';
+import { getByIndexes } from './index';
 import { arraysMatch } from '@writetome51/arrays-match';
 
 

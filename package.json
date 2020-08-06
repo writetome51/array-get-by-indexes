@@ -1,7 +1,8 @@
 {
   "name": "@writetome51/array-get-by-indexes",
-  "version": "1.0.3",
+  "version": "2.0.0",
   "description": "Returns multiple items from array, identified by their indexes. Does not modify array",
+  "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -26,10 +27,10 @@
   },
   "homepage": "https://github.com/writetome51/array-get-by-indexes#readme",
   "devDependencies": {
-    "@writetome51/arrays-match": "1.0.5"
+    "@writetome51/arrays-match": "^2.0.0"
   },
   "dependencies": {
-    "@writetome51/array-get-by-index": "~1.0.2",
-    "error-if-values-are-not-arrays": "~1.0.2"
+    "@writetome51/array-get-by-index": "^2.0.0",
+    "error-if-not-array": "^2.0.0"
   }
 }

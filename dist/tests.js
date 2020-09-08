@@ -28,8 +28,8 @@ else console.log('test 2A FAILED');
 
 // Test 3: Make sure [-8, 3] gets correct items:
 arr = ['he', 'llo', 'zz', 'gg', 'cc', 'aa', 'hh', 'oo'];
-result = getByIndexes([-8, 3], arr);
-if (arraysMatch(result, ['he', 'gg'])) console.log('test 3 passed');
+result = getByIndexes([-8, 3, 5], arr);
+if (arraysMatch(result, ['he', 'gg', 'aa'])) console.log('test 3 passed');
 else console.log('test 3 FAILED');
 
 
@@ -68,7 +68,7 @@ else console.log('test 5 FAILED');
 errorTriggered = false;
 arr = ['he', 'llo', 'zz', 'gg', 'cc', 'aa'];
 try {
-    getByIndexes({}, arr);
+    console.log(getByIndexes(' ', arr));
 }
 catch (e) {
     errorTriggered = true;
@@ -94,3 +94,4 @@ arr = ['he', 'llo', 'zz', 'gg', 'cc', 'aa', 'hh', 'oo'];
 result = getByIndexes([-8, 0], arr);
 if (arraysMatch(result, ['he', 'he'])) console.log('test 8 passed');
 else console.log('test 8 FAILED');
+

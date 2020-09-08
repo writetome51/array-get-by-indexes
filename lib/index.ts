@@ -1,4 +1,5 @@
 import { errorIfNotArray } from 'error-if-not-array';
+import { getArrFilled } from '@writetome51/get-arr-filled';
 import { getByIndex } from '@writetome51/array-get-by-index';
 
 
@@ -6,10 +7,5 @@ import { getByIndex } from '@writetome51/array-get-by-index';
 
 export function getByIndexes(indexes, array): any[] {
 	errorIfNotArray(indexes);
-
-	let i = -1, itemsToReturn = [];
-	while (++i < indexes.length) {
-		itemsToReturn.push(getByIndex(indexes[i], array));
-	}
-	return itemsToReturn;
+	return getArrFilled(indexes.length, (i) => getByIndex(indexes[i], array));
 }

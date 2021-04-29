@@ -1,4 +1,4 @@
-# getByIndexes(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;indexes: number[],<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;array: any[]<br>): any[]
+# getByIndexes\<T\>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;indexes: number[],<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;array: T[]<br>): T[]
 
 Returns multiple items from `array`, identified by their `indexes`.  
 `indexes` can be negative or positive.  

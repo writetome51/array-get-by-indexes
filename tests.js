@@ -1,40 +1,40 @@
 import { getByIndexes } from './index.js';
-import { arraysMatch } from '@writetome51/arrays-match';
+import { isMatch } from '@writetome51/is-match';
 let arr = ['he', 'llo', 'bay', 'bayyyy'];
 
 
 // Test 1: Make sure 0 and 1 gets first 2 items:
 let result = getByIndexes([0, 1], arr);
-if (arraysMatch(result, ['he', 'llo'])) console.log('test 1 passed');
+if (isMatch(result, ['he', 'llo'])) console.log('test 1 passed');
 else console.log('test 1 FAILED');
 
 
 // Test 1A: Make sure the array wasn't modified:
-if (arraysMatch(arr, ['he', 'llo', 'bay', 'bayyyy'])) console.log('test 1A passed');
+if (isMatch(arr, ['he', 'llo', 'bay', 'bayyyy'])) console.log('test 1A passed');
 else console.log('test 1A FAILED');
 
 
 // Test 2: Make sure 4 and 5 gets the last 2 items:
 arr = ['he', 'llo', 'zz', 'gg', 'cc', 'aa'];
 result = getByIndexes([4, 5], arr);
-if (arraysMatch(result, ['cc', 'aa'])) console.log('test 2 passed');
+if (isMatch(result, ['cc', 'aa'])) console.log('test 2 passed');
 else console.log('test 2 FAILED');
 
 
 // Test 2A: Make sure the array wasn't modified:
-if (arraysMatch(arr, ['he', 'llo', 'zz', 'gg', 'cc', 'aa'])) console.log('test 2A passed');
+if (isMatch(arr, ['he', 'llo', 'zz', 'gg', 'cc', 'aa'])) console.log('test 2A passed');
 else console.log('test 2A FAILED');
 
 
 // Test 3: Make sure [-8, 3] gets correct items:
 arr = ['he', 'llo', 'zz', 'gg', 'cc', 'aa', 'hh', 'oo'];
 result = getByIndexes([-8, 3, 5], arr);
-if (arraysMatch(result, ['he', 'gg', 'aa'])) console.log('test 3 passed');
+if (isMatch(result, ['he', 'gg', 'aa'])) console.log('test 3 passed');
 else console.log('test 3 FAILED');
 
 
 // Test 3A: Make sure the array wasn't modified:
-if (arraysMatch(arr, ['he', 'llo', 'zz', 'gg', 'cc', 'aa', 'hh', 'oo'])) console.log('test 3A passed');
+if (isMatch(arr, ['he', 'llo', 'zz', 'gg', 'cc', 'aa', 'hh', 'oo'])) console.log('test 3A passed');
 else console.log('test 3A FAILED');
 
 
@@ -92,6 +92,6 @@ else console.log('test 7 FAILED');
 // Test 8:
 arr = ['he', 'llo', 'zz', 'gg', 'cc', 'aa', 'hh', 'oo'];
 result = getByIndexes([-8, 0], arr);
-if (arraysMatch(result, ['he', 'he'])) console.log('test 8 passed');
+if (isMatch(result, ['he', 'he'])) console.log('test 8 passed');
 else console.log('test 8 FAILED');
 
